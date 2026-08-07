@@ -12,10 +12,10 @@ direction -= _mx * sens_x;
 tilt = clamp(tilt, -80, 80);
 
 // Movement
-var _hor = real(keyboard_check(ord("D"))) - real(keyboard_check(ord("A")));
-var _ver = real(keyboard_check(ord("W"))) - real(keyboard_check(ord("S")));
+var _hor = real(keyboard_check(rightKey)) - real(keyboard_check(leftKey));
+var _ver = real(keyboard_check(forwardKey)) - real(keyboard_check(backwardKey));
 
-if (keyboard_check(vk_shift))
+if (keyboard_check(runKey))
 {
     _hor *= 2;
     _ver *= 2;
@@ -34,6 +34,9 @@ if (abs(_move_y) < abs(move_y)) move_y *= 0.9;
 
 
 move_and_collide(move_x, move_y, [obj_wall, obj_3d]);
+
+//Jump
+
 
 // Shoot
 if (mouse_check_button(mb_left) && shoot_time <= 0)

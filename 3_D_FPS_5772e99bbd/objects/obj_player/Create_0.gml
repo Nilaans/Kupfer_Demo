@@ -24,6 +24,7 @@ window_mouse_set_locked(true);
 move_speed = 4;
 move_x = 0;
 move_y = 0;
+in_air = false;
 
 // Weapon
 gun = instance_create_depth(0, 0, 0, obj_gun_1);
@@ -33,3 +34,13 @@ shoot_time = 0;
 // Health
 hp = 100;
 immune = false;
+
+// Keybinds
+forwardKey = ord("W");
+upKey = forwardKey;
+backwardKey = ord("S");
+downKey = backwardKey;
+leftKey = ord("A");
+rightKey = ord("D");
+jumpKey = vk_space;
+runKey = vk_shift;
