@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"TPWKTA_04",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":413.25714,
+  "exportDir":"",
+  "name":"TPWKTA_04",
+  "parent":{
+    "name":"3_D_FPS_5772e99bbd",
+    "path":"3_D_FPS_5772e99bbd.yyp",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"TPWKTA_04.mp3",
+  "volume":1.0,
+}

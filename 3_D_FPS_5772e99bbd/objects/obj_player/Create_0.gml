@@ -1,0 +1,35 @@
+// Set up camera
+cam = camera_create_view(0, 0, global.res_w, global.res_h);
+view_enabled = true;
+view_visible[0] = true;
+view_camera[0] = cam;
+
+// Projection
+proj_mat = matrix_build_projection_perspective_fov(80, -global.res_w/global.res_h, 3, 3000);
+camera_set_proj_mat(cam, proj_mat);
+
+// Look
+view_mat = [];
+z = 224;
+direction = 90; // X look
+tilt = 0; // Y look
+
+// Mouselook
+sens_x = 0.2;
+sens_y = 0.2;
+
+window_mouse_set_locked(true);
+
+// Movement
+move_speed = 4;
+move_x = 0;
+move_y = 0;
+
+// Weapon
+gun = instance_create_depth(0, 0, 0, obj_gun_1);
+shoot_interval = 15;
+shoot_time = 0;
+
+// Health
+hp = 100;
+immune = false;

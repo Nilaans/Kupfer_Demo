@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Display",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Display",
+  "parent":{
+    "name":"3_D_FPS_5772e99bbd",
+    "path":"3_D_FPS_5772e99bbd.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
