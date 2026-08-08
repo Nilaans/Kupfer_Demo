@@ -15,6 +15,31 @@ tilt = clamp(tilt, -80, 80);
 var _hor = real(keyboard_check(ord("D"))) - real(keyboard_check(ord("A")));
 var _ver = real(keyboard_check(ord("W"))) - real(keyboard_check(ord("S")));
 
+// Jump
+if (keyboard_check_pressed(vk_space) && is_grounded)
+{
+    z_speed = jump_speed;
+    is_grounded = false;
+}
+
+// 2. Apply Physics
+if (!is_grounded)
+{
+    // Update height by current speed
+    z += z_speed;
+    
+    // Pull down by gravity
+    z_speed -= gravity_force;
+
+    // Check Ground Collision
+    if (z <= base_z)
+    {
+        z = base_z;
+        z_speed = 0;
+        is_grounded = true;
+    }
+}
+
 if (keyboard_check(vk_shift))
 {
     _hor *= 2;

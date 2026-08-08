@@ -11,5 +11,5 @@ if (_enemy != noone && !immune)
 
 if (hp <= 0)
 {
-    room_restart();
+    game_end();
 }

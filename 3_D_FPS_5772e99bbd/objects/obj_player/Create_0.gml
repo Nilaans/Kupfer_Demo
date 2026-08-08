@@ -3,6 +3,7 @@ cam = camera_create_view(0, 0, global.res_w, global.res_h);
 view_enabled = true;
 view_visible[0] = true;
 view_camera[0] = cam;
+base_z = 224;
 
 // Projection
 proj_mat = matrix_build_projection_perspective_fov(80, -global.res_w/global.res_h, 3, 3000);
@@ -24,6 +25,11 @@ window_mouse_set_locked(true);
 move_speed = 4;
 move_x = 0;
 move_y = 0;
+z_speed = 0;
+
+jump_speed = 12;      // Initial upward launch speed
+gravity_force = 0.6;  // Constant downward acceleration
+is_grounded = true;
 
 // Weapon
 gun = instance_create_depth(0, 0, 0, obj_gun_1);
@@ -32,4 +38,5 @@ shoot_time = 0;
 
 // Health
 hp = 100;
+max_hp = 100;
 immune = false;

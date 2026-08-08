@@ -13,7 +13,7 @@ var _angle_diff = angle_difference(_dir, direction);
 // Move
 var _dist = distance_to_object(obj_player);
 var _move_x = 0, _move_y = 0;
-if (_dist > 100)
+if (_dist > 500)
 {
     direction += 4;
 }
