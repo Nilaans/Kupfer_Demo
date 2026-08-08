@@ -40,7 +40,12 @@ if (!is_grounded)
     }
 }
 
-if (keyboard_check(vk_shift))
+if(keyboard_check_pressed(vk_control))
+{
+	auto_run = !auto_run;
+}
+
+if ((keyboard_check(vk_shift) && auto_run == false) || (!keyboard_check(vk_shift) && auto_run == true))
 {
     _hor *= 2;
     _ver *= 2;

@@ -26,6 +26,7 @@ move_speed = 4;
 move_x = 0;
 move_y = 0;
 z_speed = 0;
+auto_run = false;
 
 jump_speed = 12;      // Initial upward launch speed
 gravity_force = 0.6;  // Constant downward acceleration
@@ -35,7 +36,7 @@ is_grounded = true;
 gun = instance_create_depth(0, 0, 0, obj_gun_1);
 shoot_interval = 15;
 shoot_time = 0;
-ammo_count = 10;
+ammo_count = 100;
 
 // Health
 hp = 100;
