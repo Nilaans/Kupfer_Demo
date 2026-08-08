@@ -35,6 +35,7 @@ is_grounded = true;
 gun = instance_create_depth(0, 0, 0, obj_gun_1);
 shoot_interval = 15;
 shoot_time = 0;
+ammo_count = 10;
 
 // Health
 hp = 100;

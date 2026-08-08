@@ -19,6 +19,7 @@ gpu_push_state();
 gpu_set_fog(false, 0, 0, 0)
 
 draw_text(20, global.res_h - 2, $"HP {hp}")
+draw_text_transformed(1100, global.res_h - 500, $"AMMO {ammo_count}", 1, 1, -90)
 draw_primitive_begin(pr_trianglestrip);
 
 	draw_vertex_colour(10, 10, col, 255); //Top Left

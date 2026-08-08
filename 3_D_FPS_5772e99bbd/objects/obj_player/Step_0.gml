@@ -61,9 +61,10 @@ if (abs(_move_y) < abs(move_y)) move_y *= 0.9;
 move_and_collide(move_x, move_y, [obj_wall, obj_3d]);
 
 // Shoot
-if (mouse_check_button(mb_left) && shoot_time <= 0)
+if (mouse_check_button(mb_left) && shoot_time <= 0 && ammo_count > 0)
 {
     gun.shoot();
+	ammo_count--;
     shoot_time = shoot_interval;
     
     instance_create_depth(x, y, 0, obj_bullet, {
