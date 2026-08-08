@@ -21,6 +21,7 @@
     {"name":"spr_enemy_1_walk_down","order":1,"path":"sprites/spr_enemy_1_walk_down/spr_enemy_1_walk_down.yy",},
     {"name":"spr_floor","order":4,"path":"sprites/spr_floor/spr_floor.yy",},
     {"name":"spr_gun_1_shoot","order":10,"path":"sprites/spr_gun_1_shoot/spr_gun_1_shoot.yy",},
+    {"name":"spr_gun_1_walking","order":12,"path":"sprites/spr_gun_1_walking/spr_gun_1_walking.yy",},
     {"name":"spr_gun_1","order":5,"path":"sprites/spr_gun_1/spr_gun_1.yy",},
     {"name":"spr_knife_throw","order":11,"path":"sprites/spr_knife_throw/spr_knife_throw.yy",},
     {"name":"spr_player_col","order":9,"path":"sprites/spr_player_col/spr_player_col.yy",},

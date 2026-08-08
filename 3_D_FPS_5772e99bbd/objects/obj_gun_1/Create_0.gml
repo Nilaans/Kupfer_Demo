@@ -1,5 +1,6 @@
 sprite_idle = spr_gun_1;
 sprite_shoot = spr_gun_1_shoot;
+sprite_walk = spr_gun_1_walking;
 
 shoot = function()
 {

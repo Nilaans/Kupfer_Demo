@@ -22,14 +22,30 @@ if (keyboard_check_pressed(vk_space) && is_grounded)
     is_grounded = false;
 }
 
+// Check adjacent wall collision (1 pixel check in 4 directions)
+var _is_next_to_wall = place_meeting(x + 1, y, [obj_wall, obj_3d]) || 
+                       place_meeting(x - 1, y, [obj_wall, obj_3d]) || 
+                       place_meeting(x, y + 1, [obj_wall, obj_3d]) || 
+                       place_meeting(x, y - 1, [obj_wall, obj_3d]);
+
+var _is_wall_sticking = !is_grounded && keyboard_check(vk_space) && _is_next_to_wall;
+
 // 2. Apply Physics
 if (!is_grounded)
 {
-    // Update height by current speed
-    z += z_speed;
-    
-    // Pull down by gravity
-    z_speed -= gravity_force;
+    if (_is_wall_sticking)
+    {
+        // Lock vertical momentum and position while clinging to the wall
+        z_speed = 0;
+    }
+    else
+    {
+        // Update height by current speed
+        z += z_speed;
+        
+        // Pull down by gravity
+        z_speed -= gravity_force;
+    }
 
     // Check Ground Collision
     if (z <= base_z)
