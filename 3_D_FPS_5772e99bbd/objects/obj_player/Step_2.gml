@@ -13,3 +13,11 @@ if (hp <= 0)
 {
     game_end();
 }
+
+
+var _next = collision_circle(x, y, sprite_width*0.6, obj_barrel, false, false);
+
+if (_next != noone)
+{
+	room_goto_next();
+}

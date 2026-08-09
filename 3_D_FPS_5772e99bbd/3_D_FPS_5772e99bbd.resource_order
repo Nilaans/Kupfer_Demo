@@ -15,6 +15,7 @@
     {"name":"obj_ground","order":9,"path":"objects/obj_ground/obj_ground.yy",},
     {"name":"obj_gun_1","order":4,"path":"objects/obj_gun_1/obj_gun_1.yy",},
     {"name":"obj_wall","order":3,"path":"objects/obj_wall/obj_wall.yy",},
+    {"name":"Room2","order":6,"path":"rooms/Room2/Room2.yy",},
     {"name":"Display","order":2,"path":"scripts/Display/Display.yy",},
     {"name":"TPWKTA_04","order":5,"path":"sounds/TPWKTA_04/TPWKTA_04.yy",},
     {"name":"spr_barrel","order":2,"path":"sprites/spr_barrel/spr_barrel.yy",},
