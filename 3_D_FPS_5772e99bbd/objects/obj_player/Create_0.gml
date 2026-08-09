@@ -27,6 +27,7 @@ move_x = 0;
 move_y = 0;
 z_speed = 0;
 auto_run = false;
+dash_state = false;
 
 jump_speed = 12;      // Initial upward launch speed
 gravity_force = 0.6;  // Constant downward acceleration

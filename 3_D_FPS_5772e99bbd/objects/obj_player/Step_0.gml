@@ -81,6 +81,24 @@ if (abs(_move_y) < abs(move_y)) move_y *= 0.9;
 
 move_and_collide(move_x, move_y, [obj_wall, obj_3d]);
 
+//Dash
+if(mouse_check_button_pressed(mb_right) && !dash_state)
+{
+	dash_state = true;
+	alarm[1] = 10;
+}
+if(dash_state)
+{
+	if(_hor != 0 || _ver != 0)
+	{
+		move_and_collide((lengthdir_x(_ver * move_speed, _forward_dir) + lengthdir_x(_hor * move_speed, _side_dir))*10, (lengthdir_y(_ver * move_speed, _forward_dir) + lengthdir_y(_hor * move_speed, _side_dir))*10, [obj_wall]);
+	}
+	else
+	{
+		move_and_collide(lengthdir_x(move_speed, _forward_dir)*10, lengthdir_y(move_speed, _forward_dir)*10, [obj_wall]);
+	}
+}
+
 // Shoot
 if (mouse_check_button(mb_left) && shoot_time <= 0 && ammo_count > 0)
 {
