@@ -4,9 +4,6 @@ global.res_h = 720;
 window_set_size(global.res_w, global.res_h);
 surface_resize(application_surface, global.res_w, global.res_h);
 
-// Fog
-global.fog_colour = merge_color(c_black, c_blue, 0.1);
-gpu_set_fog(true, global.fog_colour, 50, 500);
 
 // Layers
 layer_force_draw_depth(true, 0);
