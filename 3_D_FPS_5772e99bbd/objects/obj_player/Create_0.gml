@@ -45,3 +45,8 @@ size = (480 - (100 + spacing))/ammo_count;
 hp = 100;
 max_hp = 100;
 immune = false;
+
+//Mana
+mana = 150;
+max_mana = 150;
+camoflauged = false;

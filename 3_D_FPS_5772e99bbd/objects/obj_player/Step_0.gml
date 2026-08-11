@@ -113,3 +113,11 @@ if (mouse_check_button(mb_left) && shoot_time <= 0 && ammo_count > 0)
 
 }
 if (shoot_time > 0) shoot_time--;
+
+//Camoflauge
+if (keyboard_check_pressed(ord("C")) && mana >= 10)
+{
+	camoflauged = true;
+	alarm[0] = 120;
+	mana -= 10;
+}

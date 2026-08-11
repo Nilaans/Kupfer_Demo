@@ -11,9 +11,19 @@ var _angle_diff = angle_difference(_dir, direction);
 //else if (abs(_angle_diff) == 2) sprite_index = sprite_down;
     
 // Move
+
+if (obj_player.camoflauged)
+{
+	sight = 100; 
+}
+else
+{
+	sight = 500;
+}
+
 var _dist = distance_to_object(obj_player);
 var _move_x = 0, _move_y = 0;
-if (_dist > 500)
+if (_dist > sight)
 {
     direction += 4;
 }
