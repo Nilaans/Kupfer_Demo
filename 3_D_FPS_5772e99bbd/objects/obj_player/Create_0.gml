@@ -50,3 +50,17 @@ immune = false;
 mana = 150;
 max_mana = 150;
 camoflauged = false;
+
+// Keybinds
+forward_key = ord("W");
+up_key = forward_key;
+backward_key = ord("S");
+down_key = backward_key;
+right_key = ord("D");
+left_key = ord("A");
+jump_key = vk_space;
+run_key = vk_shift;
+main_attack_key = mb_left;
+shoot_key = main_attack_key;
+big_shot = main_attack_key;
+dash_key = mb_right;

@@ -12,11 +12,11 @@ direction -= _mx * sens_x;
 tilt = clamp(tilt, -80, 80);
 
 // Movement
-var _hor = real(keyboard_check(ord("D"))) - real(keyboard_check(ord("A")));
-var _ver = real(keyboard_check(ord("W"))) - real(keyboard_check(ord("S")));
+var _hor = real(keyboard_check(right_key)) - real(keyboard_check(left_key));
+var _ver = real(keyboard_check(forward_key)) - real(keyboard_check(backward_key));
 
 // Jump
-if (keyboard_check_pressed(vk_space) && is_grounded)
+if (keyboard_check_pressed(jump_key) && is_grounded)
 {
     z_speed = jump_speed;
     is_grounded = false;
@@ -28,7 +28,7 @@ var _is_next_to_wall = place_meeting(x + 1, y, [obj_wall, obj_3d]) ||
                        place_meeting(x, y + 1, [obj_wall, obj_3d]) || 
                        place_meeting(x, y - 1, [obj_wall, obj_3d]);
 
-var _is_wall_sticking = !is_grounded && keyboard_check(vk_space) && _is_next_to_wall;
+var _is_wall_sticking = !is_grounded && keyboard_check(jump_key) && _is_next_to_wall;
 
 // 2. Apply Physics
 if (!is_grounded)
@@ -56,12 +56,12 @@ if (!is_grounded)
     }
 }
 
+//auto run stuff
 if(keyboard_check_pressed(vk_control))
 {
 	auto_run = !auto_run;
 }
-
-if ((keyboard_check(vk_shift) && auto_run == false) || (!keyboard_check(vk_shift) && auto_run == true))
+if ((keyboard_check(run_key) && auto_run == false) || (!keyboard_check(run_key) && auto_run == true))
 {
     _hor *= 2;
     _ver *= 2;
@@ -82,7 +82,7 @@ if (abs(_move_y) < abs(move_y)) move_y *= 0.9;
 move_and_collide(move_x, move_y, [obj_wall, obj_3d]);
 
 //Dash
-if(mouse_check_button_pressed(mb_right) && !dash_state)
+if(mouse_check_button_pressed(dash_key) && !dash_state)
 {
 	dash_state = true;
 	alarm[1] = 10;
@@ -91,16 +91,16 @@ if(dash_state)
 {
 	if(_hor != 0 || _ver != 0)
 	{
-		move_and_collide((lengthdir_x(_ver * move_speed, _forward_dir) + lengthdir_x(_hor * move_speed, _side_dir))*10, (lengthdir_y(_ver * move_speed, _forward_dir) + lengthdir_y(_hor * move_speed, _side_dir))*10, [obj_wall]);
+		move_and_collide((lengthdir_x(_ver * move_speed, _forward_dir) + lengthdir_x(_hor * move_speed, _side_dir))*10, (lengthdir_y(_ver * move_speed, _forward_dir) + lengthdir_y(_hor * move_speed, _side_dir))*10, [obj_wall, obj_obstacle_1]);
 	}
 	else
 	{
-		move_and_collide(lengthdir_x(move_speed, _forward_dir)*10, lengthdir_y(move_speed, _forward_dir)*10, [obj_wall]);
+		move_and_collide(lengthdir_x(move_speed, _forward_dir)*10, lengthdir_y(move_speed, _forward_dir)*10, [obj_wall, obj_obstacle_1]);
 	}
 }
 
 // Shoot
-if (mouse_check_button(mb_left) && shoot_time <= 0 && ammo_count > 0)
+if (mouse_check_button(main_attack_key) && shoot_time <= 0 && ammo_count > 0)
 {
     gun.shoot();
 	ammo_count--;
