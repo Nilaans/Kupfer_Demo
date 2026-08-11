@@ -18,6 +18,7 @@
     {"name":"obj_obstacle_1","order":10,"path":"objects/obj_obstacle_1/obj_obstacle_1.yy",},
     {"name":"obj_room_spawn_point","order":12,"path":"objects/obj_room_spawn_point/obj_room_spawn_point.yy",},
     {"name":"obj_wall","order":3,"path":"objects/obj_wall/obj_wall.yy",},
+    {"name":"Boss_Room","order":11,"path":"rooms/Boss_Room/Boss_Room.yy",},
     {"name":"MENU","order":10,"path":"rooms/MENU/MENU.yy",},
     {"name":"Room2","order":6,"path":"rooms/Room2/Room2.yy",},
     {"name":"Room3","order":7,"path":"rooms/Room3/Room3.yy",},
