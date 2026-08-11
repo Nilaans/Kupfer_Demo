@@ -41,6 +41,7 @@
     {"id":{"name":"obj_gun_1","path":"objects/obj_gun_1/obj_gun_1.yy",},},
     {"id":{"name":"obj_obstacle_1","path":"objects/obj_obstacle_1/obj_obstacle_1.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_room_spawn_point","path":"objects/obj_room_spawn_point/obj_room_spawn_point.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"MENU","path":"rooms/MENU/MENU.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},

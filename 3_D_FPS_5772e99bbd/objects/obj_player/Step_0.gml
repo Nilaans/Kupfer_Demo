@@ -82,7 +82,7 @@ if (abs(_move_y) < abs(move_y)) move_y *= 0.9;
 move_and_collide(move_x, move_y, [obj_wall, obj_3d]);
 
 //Dash
-if(mouse_check_button_pressed(dash_key) && !dash_state)
+if(mouse_check_button_pressed(dash_key) && !dash_state && dash_ready)
 {
 	dash_state = true;
 	alarm[1] = 10;

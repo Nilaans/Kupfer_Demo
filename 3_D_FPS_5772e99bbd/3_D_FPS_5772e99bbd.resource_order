@@ -16,6 +16,7 @@
     {"name":"obj_ground","order":9,"path":"objects/obj_ground/obj_ground.yy",},
     {"name":"obj_gun_1","order":4,"path":"objects/obj_gun_1/obj_gun_1.yy",},
     {"name":"obj_obstacle_1","order":10,"path":"objects/obj_obstacle_1/obj_obstacle_1.yy",},
+    {"name":"obj_room_spawn_point","order":12,"path":"objects/obj_room_spawn_point/obj_room_spawn_point.yy",},
     {"name":"obj_wall","order":3,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"MENU","order":10,"path":"rooms/MENU/MENU.yy",},
     {"name":"Room2","order":6,"path":"rooms/Room2/Room2.yy",},
