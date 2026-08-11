@@ -100,19 +100,49 @@ if(dash_state)
 }
 
 // Shoot
+// Cooldown tick
+if (shoot_time > 0) shoot_time--;
+
+// 1. Accumulate charge while holding button
 if (mouse_check_button(main_attack_key) && shoot_time <= 0 && ammo_count > 0)
 {
+    // Only charge if player has at least 35 mana
+    if (mana >= 35)
+    {
+        charge_time++;
+    }
+}
+
+// 2. Fire on button release
+if (mouse_check_button_released(main_attack_key) && shoot_time <= 0 && ammo_count > 0)
+{
+    var _is_fully_charged = (charge_time >= charge_max && mana >= 35);
+
+    if (_is_fully_charged)
+    {
+        mana -= 35; // Deduct 35 mana for charged attack
+    }
+
     gun.shoot();
-	ammo_count--;
+    ammo_count--;
     shoot_time = shoot_interval;
-    
-    instance_create_depth(x, y, 0, obj_bullet, {
-        speed: 20,
-        direction: direction
+
+    // Create the bullet
+    instance_create_depth(x, y, depth, obj_bullet, {
+        speed: _is_fully_charged ? 25 : 20,
+        direction: direction,
+        is_charged: _is_fully_charged,
+        image_blend: _is_fully_charged ? c_aqua : c_white
     });
 
+    charge_time = 0; // Reset charge
 }
-if (shoot_time > 0) shoot_time--;
+
+// Reset charge if button released prematurely
+if (!mouse_check_button(main_attack_key))
+{
+    charge_time = 0;
+}
 
 //Camoflauge
 if (keyboard_check_pressed(ord("C")) && mana >= 10)
@@ -155,4 +185,10 @@ if (keyboard_check_pressed(vk_f3))
 if (keyboard_check_pressed(vk_f2))
 {
 	room_goto_previous();
+}
+if (keyboard_check_pressed(ord("T")))
+{
+    show_debug_message("T key detected!");
+    var _fx = instance_create_depth(x, y, -100 , obj_explosion_fx);
+    show_debug_message("Spawned FX Instance ID: " + string(_fx));
 }

@@ -53,6 +53,12 @@ mana = 200;
 max_mana = 200;
 camoflauged = false;
 
+//Charged Attack Setup
+charge_time = 0;
+charge_max = 60; // 60 frames = 1 second for full charge
+
+
+
 
 // Keybinds
 forward_key = ord("W");
