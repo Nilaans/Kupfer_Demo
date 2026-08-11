@@ -11,9 +11,9 @@ move_speed = 2;
 
 hp = 3;
 
-hit = function ()
+hit = function (damage)
 {
-    hp--;
+    hp -= damage;
     
     if (hp <= 0)
     {
@@ -23,3 +23,5 @@ hit = function ()
         instance_destroy();
     }
 }
+
+flash_timer = 0;

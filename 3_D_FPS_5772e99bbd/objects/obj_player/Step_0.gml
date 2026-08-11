@@ -121,3 +121,38 @@ if (keyboard_check_pressed(ord("C")) && mana >= 10)
 	alarm[0] = 120;
 	mana -= 10;
 }
+
+// Lightning Punch Attack
+if (keyboard_check_pressed(ord("F")))
+{
+    show_debug_message("F key pressed. Current mana: " + string(mana));
+    
+    if (mana >= 20)
+    {
+        mana -= 20;
+        show_debug_message("Spawning lightning punch!");
+        
+        instance_create_depth(x, y, depth, obj_lightning_punch, {
+            speed: 30,
+            direction: direction,
+            z: z
+        });
+    }
+}
+
+// Debugging tools 
+if (keyboard_check_pressed(vk_f1))
+{
+	hp = max_hp;
+	mana = max_mana;
+	ammo_count += 25;
+
+}
+if (keyboard_check_pressed(vk_f3))
+{
+	room_goto_next();
+}
+if (keyboard_check_pressed(vk_f2))
+{
+	room_goto_previous();
+}

@@ -49,9 +49,10 @@ max_hp = 100;
 immune = false;
 
 //Mana
-mana = 150;
-max_mana = 150;
+mana = 200;
+max_mana = 200;
 camoflauged = false;
+
 
 // Keybinds
 forward_key = ord("W");
@@ -66,3 +67,4 @@ main_attack_key = mb_left;
 shoot_key = main_attack_key;
 big_shot = main_attack_key;
 dash_key = mb_right;
+channeling_key = ord("F");

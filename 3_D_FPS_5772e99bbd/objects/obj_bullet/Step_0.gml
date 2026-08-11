@@ -1,6 +1,6 @@
 var _col = collision_line(xprevious, yprevious, x, y, obj_enemy_parent, false, false);
 if (_col != noone)
 {
-    _col.hit();
+    _col.hit(1);
     instance_destroy();
 }
