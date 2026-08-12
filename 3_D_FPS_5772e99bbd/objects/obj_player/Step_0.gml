@@ -171,16 +171,19 @@ if (keyboard_check_pressed(ord("F")))
 }
 
 // Mana Recharge
-if (obj_enemy_parent.is_hit)
+if (instance_exists(obj_enemy_parent))
 {
-	chance = irandom_range(0,10);
-	if (chance >= 6 && mana <= max_mana - 5)
+	if (obj_enemy_parent.is_hit)
 	{
-		mana += 5;
-	}
-	else if (chance >= 6 && mana > max_mana - 5)
-	{
-		mana = max_mana;
+		chance = irandom_range(0,10);
+		if (chance >= 6 && mana <= max_mana - 5)
+		{
+			mana += 5;
+		}
+		else if (chance >= 6 && mana > max_mana - 5)
+		{
+			mana = max_mana;
+		}
 	}
 }
 
