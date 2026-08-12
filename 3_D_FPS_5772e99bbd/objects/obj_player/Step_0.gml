@@ -170,6 +170,20 @@ if (keyboard_check_pressed(ord("F")))
     }
 }
 
+// Mana Recharge
+if (obj_enemy_parent.is_hit)
+{
+	chance = irandom_range(0,10);
+	if (chance >= 6 && mana <= max_mana - 5)
+	{
+		mana += 5;
+	}
+	else if (chance >= 6 && mana > max_mana - 5)
+	{
+		mana = max_mana;
+	}
+}
+
 // Debugging tools 
 if (keyboard_check_pressed(vk_f1))
 {

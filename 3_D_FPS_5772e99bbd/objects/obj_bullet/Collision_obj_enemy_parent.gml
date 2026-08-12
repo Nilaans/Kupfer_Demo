@@ -13,7 +13,7 @@ if (is_charged)
         {
             if (variable_instance_exists(id, "hit"))
             {
-                hit(75);
+                hit(3);
             }
         }
     }
@@ -23,7 +23,7 @@ else
     var _enemy = instance_place(x, y, obj_enemy_parent);
     if (_enemy != noone && variable_instance_exists(_enemy, "hit"))
     {
-        _enemy.hit(25);
+        _enemy.hit(1);
     }
 }
 

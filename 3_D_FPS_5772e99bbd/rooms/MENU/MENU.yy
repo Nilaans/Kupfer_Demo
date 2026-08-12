@@ -31,7 +31,7 @@
         {"name":"g_Distort2Amount","type":0,"value":"58",},
         {"name":"g_ChromaSpreadAmount","type":0,"value":"6.75",},
         {"name":"g_CamOffsetScale","type":0,"value":"1",},
-        {"name":"g_GlintCol","type":1,"value":"#FFE5E5E5",},
+        {"name":"g_GlintCol","type":1,"value":"#FF333333",},
         {"name":"g_TintCol","type":1,"value":"#FF4C4C4C",},
         {"name":"g_AddCol","type":1,"value":"#FF000000",},
         {"name":"g_DistortTexture","type":2,"value":"_filter_underwater_noise_sprite",},

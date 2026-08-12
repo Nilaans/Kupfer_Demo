@@ -10,11 +10,16 @@ move_speed = 2;
 //sprite_dead = spr_enemy_1_dead;
 
 hp = 3;
+is_hit = false;
 
 hit = function (damage)
 {
     hp -= damage;
     
+	is_hit = true;
+	
+	alarm[0] = 15;
+	
     if (hp <= 0)
     {
        // instance_create_depth(x, y, depth, obj_enemy_dead, {
