@@ -1,4 +1,7 @@
 if (is_open) {
+	gpu_push_state();
+	gpu_set_fog(false, 0, 0, 0);
+	
     // --- portrait box ---
     un_draw_quad_border(portrait_pts_x, portrait_pts_y, border_thick, col_border, col_fill);
 
@@ -25,4 +28,5 @@ if (is_open) {
 
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
+	gpu_pop_state();
 }
