@@ -8,7 +8,6 @@ if (is_open) {
                 if (char_index < string_length(full_text)) {
                     char_index++;
                     displayed_text = string_copy(full_text, 1, char_index);
-
                     // play a blip on non-space characters
                     var _c = string_char_at(full_text, char_index);
                     if (blip_sound != -1 && _c != " " && (char_index mod blip_every == 0)) {
@@ -22,7 +21,7 @@ if (is_open) {
         }
     }
 
-    // press Z / Enter / left click to fast-forward or close the box
+    // press Z / Enter / left click to fast-forward, advance, or close the box
     if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z")) || mouse_check_button_pressed(mb_left)) {
         if (is_typing) {
             // skip straight to full text
@@ -30,8 +29,17 @@ if (is_open) {
             char_index = string_length(full_text);
             is_typing = false;
         } else {
-            // close the box (hook your own "advance to next line" logic here)
-            is_open = false;
+            // move to the next queued line, or close if none remain
+            queue_index++;
+            if (queue_index < array_length(text_queue)) {
+                full_text      = text_queue[queue_index];
+                displayed_text = "";
+                char_index     = 0;
+                type_timer     = 0;
+                is_typing      = true;
+            } else {
+                is_open = false;
+            }
         }
     }
 }

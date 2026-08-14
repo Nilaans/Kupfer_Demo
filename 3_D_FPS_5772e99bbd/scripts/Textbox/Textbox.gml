@@ -4,17 +4,6 @@
 function un_generate_box_shape() {
     var _w = wobble_amount;
 
-    // ---- portrait box (higher + shorter) ----
-    var py0 = box_y + portrait_y_off;
-    var py1 = py0 + portrait_h;
-    var px0 = box_x;
-    var px1 = box_x + portrait_w;
-
-    portrait_pts_x[0] = px0 + random_range(-_w, _w); portrait_pts_y[0] = py0 + random_range(-_w, _w);
-    portrait_pts_x[1] = px1 + random_range(-_w, _w); portrait_pts_y[1] = py0 + random_range(-_w, _w);
-    portrait_pts_x[2] = px1 + random_range(-_w, _w); portrait_pts_y[2] = py1 + random_range(-_w, _w);
-    portrait_pts_x[3] = px0 + random_range(-_w, _w); portrait_pts_y[3] = py1 + random_range(-_w, _w);
-
     // ---- text trapezoid (lower + taller, slanted right edge) ----
     var ty0 = box_y + text_y_off;
     var ty1 = ty0 + text_h;
@@ -27,6 +16,21 @@ function un_generate_box_shape() {
     text_pts_x[1] = tx1 + random_range(-_w, _w); text_pts_y[1] = ty0 + random_range(-_w, _w); // top-right
     text_pts_x[2] = tx2 + random_range(-_w, _w); text_pts_y[2] = ty1 + random_range(-_w, _w); // bottom-right (kicked out)
     text_pts_x[3] = tx3 + random_range(-_w, _w); text_pts_y[3] = ty1 + random_range(-_w, _w); // bottom-left
+
+    // ---- portrait box (higher + shorter) ----
+    var py0 = box_y + portrait_y_off;
+    var py1 = py0 + portrait_h;
+    var px0 = box_x;
+    var px1 = box_x + portrait_w;
+	var px2 = px0 + portrait_w + slant;
+    var px3 = px0;
+
+    portrait_pts_x[0] = px0 + random_range(-_w, _w); portrait_pts_y[0] = py0 + random_range(-_w, _w);
+    portrait_pts_x[1] = px1 + random_range(-_w, _w); portrait_pts_y[1] = py0 + random_range(-_w, _w);
+    portrait_pts_x[2] = px2 + random_range(-_w, _w); portrait_pts_y[2] = py1 + random_range(-_w, _w);
+    portrait_pts_x[3] = px3 + random_range(-_w, _w); portrait_pts_y[3] = py1 + random_range(-_w, _w);
+
+
 }
 
 
@@ -57,17 +61,26 @@ function un_draw_quad_border(xs, ys, thickness, border_col, fill_col) {
     draw_primitive_end();
 }
 
-/// @function un_textbox_start(text, [portrait_spr], [portrait_img])
 /// @description Call this from anywhere (e.g. an NPC's interaction event)
 ///              to open the box and start the typewriter effect.
+/// @function un_textbox_start(text_or_array, [portrait_spr], [portrait_img])
 function un_textbox_start(_text, _portrait_spr, _portrait_img) {
-    full_text      = _text;
+    // accept either a single string or an array of strings
+    if (is_array(_text)) {
+        text_queue = _text;
+    } else {
+        text_queue = [_text];
+    }
+
+    queue_index     = 0;
+    portrait_sprite = (argument_count > 1) ? _portrait_spr : -1;
+    portrait_image  = (argument_count > 2) ? _portrait_img : 0;
+
+    full_text      = text_queue[queue_index];
     displayed_text = "";
     char_index     = 0;
     type_timer     = 0;
     is_typing      = true;
     is_open        = true;
-    portrait_sprite = (argument_count > 1) ? _portrait_spr : -1;
-    portrait_image  = (argument_count > 2) ? _portrait_img : 0;
-    un_generate_box_shape(); // re-roll the wobble each time the box opens
+    un_generate_box_shape();
 }

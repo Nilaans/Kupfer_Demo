@@ -45,8 +45,8 @@
   ],
   "name":"Room2",
   "parent":{
-    "name":"3_D_FPS_5772e99bbd",
-    "path":"3_D_FPS_5772e99bbd.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
