@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Songs","folderPath":"folders/Songs.yy","name":"Songs","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemy1","folderPath":"folders/Sprites/Enemy1.yy","name":"Enemy1","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
@@ -26,7 +27,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.16",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"3_D_FPS_5772e99bbd",
   "resources":[
@@ -35,14 +36,12 @@
     {"id":{"name":"obj_barrel","path":"objects/obj_barrel/obj_barrel.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
-    {"id":{"name":"obj_enemy_2","path":"objects/obj_enemy_2/obj_enemy_2.yy",},},
-    {"id":{"name":"obj_enemy_dead","path":"objects/obj_enemy_dead/obj_enemy_dead.yy",},},
     {"id":{"name":"obj_enemy_parent","path":"objects/obj_enemy_parent/obj_enemy_parent.yy",},},
     {"id":{"name":"obj_explosion_fx","path":"objects/obj_explosion_fx/obj_explosion_fx.yy",},},
     {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},},
-    {"id":{"name":"obj_gun_1","path":"objects/obj_gun_1/obj_gun_1.yy",},},
     {"id":{"name":"obj_lightning_punch","path":"objects/obj_lightning_punch/obj_lightning_punch.yy",},},
     {"id":{"name":"obj_obstacle_1","path":"objects/obj_obstacle_1/obj_obstacle_1.yy",},},
+    {"id":{"name":"obj_player_sprite","path":"objects/obj_player_sprite/obj_player_sprite.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_room_spawn_point","path":"objects/obj_room_spawn_point/obj_room_spawn_point.yy",},},
     {"id":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},},

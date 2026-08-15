@@ -10,7 +10,7 @@ proj_mat = matrix_build_projection_perspective_fov(80, -global.res_w/global.res_
 camera_set_proj_mat(cam, proj_mat);
 
 //draw gun
-gun = instance_create_depth(0, 0, -1000, obj_gun_1);
+gun = instance_create_depth(0, 0, -1000, obj_player_sprite);
 
 //tp player to spawn point
 if(instance_find(obj_room_spawn_point, 0) >= 0)

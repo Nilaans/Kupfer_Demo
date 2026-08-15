@@ -6,15 +6,14 @@ var _spr_w = sprite_get_width(spr_knife_throw);
 
 if (is_charged)
 {
-	image_colour = c_aqua;
+    image_colour = c_aqua;
 }
 else
 {
-	image_colour = c_white
+    image_colour = c_white;
 }
 
 if (_dist > 0 && _spr_w > 0) {
-    // Scale the sprite length to match the distance between positions
     var _xscale = _dist / _spr_w;
     draw_sprite_ext(spr_knife_throw, image_index, xprevious, yprevious, _xscale, 1, _dir, image_colour, 1);
 } else {
@@ -24,8 +23,8 @@ if (_dist > 0 && _spr_w > 0) {
 if (!instance_exists(obj_player)) exit;
 
 // Match camera angle so bullet sprite faces player
-var _dir = obj_player.direction + 90;
-var _matrix = matrix_build(x, y, 0, 90 + obj_player.tilt, 0, _dir, 1, 1, 1);
+var _look_dir = obj_player.direction + 90;   // renamed from _dir
+var _matrix = matrix_build(x, y, 0, 90 + obj_player.tilt, 0, _look_dir, 1, 1, 1);
 
 matrix_set(matrix_world, _matrix);
 

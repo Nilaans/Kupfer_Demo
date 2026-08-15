@@ -16,17 +16,17 @@ if (is_open) {
 
 
 
-    // --- text ---
     draw_set_color(col_text);
-    draw_set_font(-1); // swap -1 for your Undertale-style font asset
-    draw_set_halign(fa_left);
-    draw_set_valign(fa_top);
+	draw_set_font(-1); // swap -1 for your Undertale-style font asset
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
 
-    var _text_x = box_x + portrait_w + gap + text_pad_x + 25;
-    var _text_y = box_y + text_y_off + text_pad_y;
-    var _wrap_w = text_box_w - text_pad_x * 2;
+	var _text_scale = 1.3;   // bump this up/down to taste
+	var _text_x = box_x + portrait_w + gap + text_pad_x + 25;
+	var _text_y = box_y + text_y_off + text_pad_y;
+	var _wrap_w = (text_box_w - text_pad_x * 2) / _text_scale; // divide since wrap width is in unscaled units
 
-    draw_text_ext(_text_x, _text_y, displayed_text, text_line_sep, _wrap_w);
+	draw_text_transformed_ext(_text_x, _text_y, displayed_text, _text_scale, _text_scale, 0, text_line_sep * _text_scale, _wrap_w);
 
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);

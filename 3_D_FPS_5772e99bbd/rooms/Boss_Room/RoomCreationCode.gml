@@ -1,14 +1,4 @@
-if (!audio_is_playing(H_08))
-{
-audio_sound_gain(TPWKTA_04, 0, 2000);
-call_later(2000, time_source_units_frames, function() {
-    audio_stop_sound(TPWKTA_04);
-}, false);
-room_audio = audio_play_sound(H_08, 1, true);
-audio_sound_gain(room_audio, 0, 0);
-audio_sound_gain(room_audio, 1, 2000);
-
-}
+room_audio = crossfade_room_music(TPWKTA_04, H_08);
 with (obj_textbox) {
        un_textbox_start([
            "Howdy Partna'",

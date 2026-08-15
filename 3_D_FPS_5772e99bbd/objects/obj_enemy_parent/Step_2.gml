@@ -21,7 +21,7 @@ else
 	sight = 500;
 }
 
-var _dist = distance_to_object(obj_gun_1);
+var _dist = distance_to_object(obj_player_sprite);
 var _move_x = 0, _move_y = 0;
 if (_dist > sight)
 {
@@ -35,4 +35,4 @@ else
 _move_x = lengthdir_x(move_speed, direction);
 _move_y = lengthdir_y(move_speed, direction);
 
-move_and_collide(_move_x, _move_y, [obj_wall, obj_3d, obj_gun_1, obj_player]);
+move_and_collide(_move_x, _move_y, [obj_wall, obj_3d, obj_player_sprite, obj_player]);

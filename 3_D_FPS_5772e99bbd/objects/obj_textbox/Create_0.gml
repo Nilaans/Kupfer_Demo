@@ -6,11 +6,11 @@ portrait_w       = 150;
 portrait_h       = 260;   // portrait box is a bit SHORTER
 portrait_y_off   = -130;   // ...and sits a bit HIGHER than the text box
 
-text_box_w       = 480;
-text_h           = 130;   // text box is TALLER
+text_box_w       = 640;   // was 480 — wider box
+text_h           = 150;   // was 130 — a bit taller to fit bigger text
+slant            = 65;    // was 55 — scale the slant with the new width   // text box is TALLER
 text_y_off       = 0;    // ...and sits a bit LOWER, extending past the portrait
-
-slant            = 55;    // how far the right edge kicks outward at the bottom
+					     // how far the right edge kicks outward at the bottom
 gap              = 0;     // gap between portrait box and text box
 border_thick     = 5;     // white border thickness (make this visible!)
 wobble_amount    = 2;     // hand-drawn roughness

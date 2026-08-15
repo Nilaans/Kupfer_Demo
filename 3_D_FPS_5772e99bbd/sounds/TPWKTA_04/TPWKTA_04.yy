@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"TPWKTA_04",
   "parent":{
-    "name":"3_D_FPS_5772e99bbd",
-    "path":"3_D_FPS_5772e99bbd.yyp",
+    "name":"Songs",
+    "path":"folders/Songs.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
