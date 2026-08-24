@@ -26,7 +26,7 @@ if (is_open) {
 	var _text_y = box_y + text_y_off + text_pad_y;
 	var _wrap_w = (text_box_w - text_pad_x * 2) / _text_scale; // divide since wrap width is in unscaled units
 
-	draw_text_transformed_ext(_text_x, _text_y, displayed_text, _text_scale, _text_scale, 0, text_line_sep * _text_scale, _wrap_w);
+	draw_text_ext_transformed(_text_x, _text_y, displayed_text, text_line_sep * _text_scale, _wrap_w, _text_scale, _text_scale, 0);
 
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);

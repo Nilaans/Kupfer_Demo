@@ -44,6 +44,7 @@ text_pts_x       = array_create(4, 0);
 text_pts_y       = array_create(4, 0);
 text_queue       = [];   // array of strings waiting to be shown
 queue_index      = 0;
+on_close = undefined;
 
 randomize();
 un_generate_box_shape();

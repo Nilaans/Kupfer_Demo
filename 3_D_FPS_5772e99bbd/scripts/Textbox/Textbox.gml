@@ -83,4 +83,5 @@ function un_textbox_start(_text, _portrait_spr, _portrait_img) {
     is_typing      = true;
     is_open        = true;
     un_generate_box_shape();
+	
 }

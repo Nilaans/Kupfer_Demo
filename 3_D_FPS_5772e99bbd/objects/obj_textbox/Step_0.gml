@@ -38,8 +38,13 @@ if (is_open) {
                 type_timer     = 0;
                 is_typing      = true;
             } else {
-                is_open = false;
-            }
+			    is_open = false;
+			    if (!is_undefined(on_close)) {
+			        var _cb = on_close;
+			        on_close = undefined; // clear so it only fires once
+			        _cb();
+			    }
+			}
         }
     }
 }
